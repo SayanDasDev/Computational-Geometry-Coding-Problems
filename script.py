@@ -73,8 +73,50 @@ def append_week_to_readme(week_num, title):
             f.write(f"# Weekly Coding Problems 📚\n\n{new_section}")
         print(f"📄 Created README.md and added Week {week_num}")
 
+def add_toc():
+    if not os.path.exists(README_PATH):
+        print("❌ README.md not found")
+        return
+
+    with open(README_PATH, "r", encoding="utf-8") as f:
+        content = f.readlines()
+
+    # Find week headings
+    week_pattern = re.compile(r"^## 📂 Week (\d+): (.+)$")
+    toc_entries = []
+    for line in content:
+        match = week_pattern.match(line.strip())
+        if match:
+            week_num, title = match.groups()
+            anchor = f"#📂-week-{week_num}-{title.lower().replace(' ', '-') }"
+            toc_entries.append(f"- [Week {week_num}: {title}]({anchor})\n")
+
+    if not toc_entries:
+        print("ℹ️ No week sections found in README.md")
+        return
+
+    toc_block = ["## 📑 Table of Contents\n\n"] + toc_entries + ["\n"]
+
+    # Remove existing TOC if any
+    if content and content[0].startswith("## 📑 Table of Contents"):
+        while content and content[0].strip():
+            content.pop(0)
+        while content and content[0] == "\n":
+            content.pop(0)
+
+    new_content = toc_block + content
+
+    with open(README_PATH, "w", encoding="utf-8") as f:
+        f.writelines(new_content)
+    print("✅ Table of Contents added to README.md")
 
 if __name__ == "__main__":
-    week_num = input("Enter week number: ").strip()
-    title = input("Enter problem title: ").strip()
-    append_week_to_readme(week_num, title)
+    choice = input("Enter mode (add_week / toc): ").strip().lower()
+    if choice == "add_week":
+        week_num = input("Enter week number: ").strip()
+        title = input("Enter problem title: ").strip()
+        append_week_to_readme(week_num, title)
+    elif choice == "toc":
+        add_toc()
+    else:
+        print("❌ Unknown mode")

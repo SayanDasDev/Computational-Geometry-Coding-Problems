@@ -1,3 +1,9 @@
+## 📑 Table of Contents
+
+- [Week 1: Collinear/Coincident Check](#📂-week-1-collinear/coincident-check)
+- [Week 2: Simple/Convex Polygon Check](#📂-week-2-simple/convex-polygon-check)
+- [Week 3: Inside/Outside Polygon Check](#📂-week-3-inside/outside-polygon-check)
+
 # Weekly Coding Problems 📚
 
 
