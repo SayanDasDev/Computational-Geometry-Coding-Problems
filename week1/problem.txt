@@ -1,0 +1,1 @@
+Given n points in R^2 check if they are collinear/coincident.

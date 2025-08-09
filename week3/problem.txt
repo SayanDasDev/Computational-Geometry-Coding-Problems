@@ -1,0 +1,2 @@
+Let P be a sequence of n points denoting a polygon and S be a set of m points.
+Check if the points in S are inside or outside the polygon.

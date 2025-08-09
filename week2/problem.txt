@@ -1,0 +1,2 @@
+Let S be a sequence of n points.
+Does S define a convex polygon or simple polygon?
