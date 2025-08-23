@@ -5,6 +5,8 @@
 #include <climits>
 #include <cmath>
 
+#define PROJECT_NAME = "chull"
+
 using namespace std;
 
 const double EPS = 1e-2;

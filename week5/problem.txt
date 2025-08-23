@@ -1,0 +1,3 @@
+Let S be a set of n points in R^2.
+Let P be a convex polygon.
+Check for each query point q ∈ S, if it is inside, outside, or on hte boundary of polygon P.

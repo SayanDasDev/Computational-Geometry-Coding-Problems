@@ -37,6 +37,20 @@
     "type_traits": "cpp",
     "typeinfo": "cpp",
     "utility": "cpp",
-    "vector": "cpp"
+    "vector": "cpp",
+    "atomic": "cpp",
+    "bit": "cpp",
+    "compare": "cpp",
+    "concepts": "cpp",
+    "cstdint": "cpp",
+    "unordered_map": "cpp",
+    "exception": "cpp",
+    "memory_resource": "cpp",
+    "optional": "cpp",
+    "string_view": "cpp",
+    "system_error": "cpp",
+    "initializer_list": "cpp",
+    "numbers": "cpp",
+    "stdexcept": "cpp"
   }
 }

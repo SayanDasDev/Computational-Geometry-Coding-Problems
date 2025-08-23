@@ -69,12 +69,11 @@ Does S define a convex polygon or simple polygon?
 
 ---
 
-## 📂 Week 3: Inside/Outside/on Boundary
+## 📂 Week 3: Inside/Outside Polygon Check in Linear Time
 
 ### 📜 Problem Statement
-> Let S be a set of n pints in R^2.
-Let P be a convex polygon.
-Check for each query pint q ∈ S, if it s inside, outside or in the boundary of polygon P.
+> Let P be a sequence of n points denoting a polygon and S be a set of m points.
+Check if the points in S are inside or outside the polygon.
 
 ---
 
@@ -126,6 +125,47 @@ Check for each query pint q ∈ S, if it s inside, outside or in the boundary of
 0 1
 1 1
 0.5 0.5
+```
+
+</details>
+
+---
+
+## 📂 Week 5: Inside/Outside/On boundary Polygon Check in Logerithmic Time
+
+### 📜 Problem Statement
+> Let S be a set of n points in R^2.
+Let P be a convex polygon.
+Check for each query point q ∈ S, if it is inside, outside, or on hte boundary of polygon P.
+
+---
+
+### 📁 Folder
+[🔗 Go to Week 5 folder](./week5/)
+
+---
+
+### 📄 Demo Input
+<details>
+<summary>Click to view sample input</summary>
+
+```
+1.0 5.7
+1.0 3.6
+1.2 2.1
+1.4 1.6
+2.4 1.1
+3.3 0.7
+6.1 0.4
+9.0 2.3
+9.7 3.6
+9.6 4.9
+9.0 7.9
+6.8 9.4
+3.5 9.7
+3.4 9.6
+2.1 8.7
+1.1 7.3
 ```
 
 </details>
