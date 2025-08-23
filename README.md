@@ -102,3 +102,31 @@ Check if the points in S are inside or outside the polygon.
 </details>
 
 ---
+
+## 📂 Week 4: Convex Hull
+
+### 📜 Problem Statement
+> Given a set of points S compute the convex hull.
+
+---
+
+### 📁 Folder
+[🔗 Go to Week 4 folder](./week4/)
+
+---
+
+### 📄 Demo Input
+<details>
+<summary>Click to view sample input</summary>
+
+```
+0 0
+1 0 
+0 1
+1 1
+0.5 0.5
+```
+
+</details>
+
+---
