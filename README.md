@@ -69,11 +69,12 @@ Does S define a convex polygon or simple polygon?
 
 ---
 
-## 📂 Week 3: Inside/Outside Polygon Check
+## 📂 Week 3: Inside/Outside/on Boundary
 
 ### 📜 Problem Statement
-> Let P be a sequence of n points denoting a polygon and S be a set of m points.
-Check if the points in S are inside or outside the polygon.
+> Let S be a set of n pints in R^2.
+Let P be a convex polygon.
+Check for each query pint q ∈ S, if it s inside, outside or in the boundary of polygon P.
 
 ---
 
