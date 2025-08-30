@@ -1,19 +1,27 @@
 project(
   'csearch',
   'cpp',
-  version : '0.1',
-  meson_version : '>= 1.3.0',
-  default_options : ['warning_level=3', 'cpp_std=c++14'],
+  version: '0.1',
+  license: 'GPL-2.0-or-later',
+  default_options: ['warning_level=3', 'c_std=c23', 'cpp_std=c++23'],
 )
 
-dependencies = [
-]
+thread_dep = dependency('threads')
+gtest_dep = dependency('gtest')
 
-exe = executable(
+subdir('src')
+# subdir('test')
+# subdir('bench')
+
+#prj_inc = include_directories('include')
+#prj_deps = []
+#prj_libs = []
+
+
+prj_exe = executable(
   'csearch',
-  'csearch.cpp',
-  install : true,
-  dependencies : dependencies,
+  main_srcs,
+  #include_directories : prj_inc,
+  #dependencies : prj_deps,
+  #link_with : prj_libs
 )
-
-test('basic', exe)

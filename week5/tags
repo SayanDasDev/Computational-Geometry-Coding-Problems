@@ -1,0 +1,185 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	/home/sayandasdev/ClassWork/SirishMj/Computational-Geometry-Coding-Problems/week5/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	//
+0	build/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	s	array:error_list
+0	clean/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	s	array:error_list
+CH	scripts/gen-cp.py	/^CH = LH + UH[1:-1]$/;"	v
+COMMON_H	src/common.h	/^#define COMMON_H$/;"	d
+ConvexPolygon	src/common.h	/^class ConvexPolygon {$/;"	c
+INSIDE	src/common.h	/^    INSIDE,$/;"	e	enum:PointLocation
+LH	scripts/gen-cp.py	/^LH = [S[0], S[1]]$/;"	v
+ON_BOUNDARY	src/common.h	/^    ON_BOUNDARY$/;"	e	enum:PointLocation
+OUTSIDE	src/common.h	/^    OUTSIDE,$/;"	e	enum:PointLocation
+Point	src/common.h	/^    Point() : x(0), y(0) {}$/;"	f	struct:Point
+Point	src/common.h	/^    Point(double x, double y) : x(x), y(y) {}$/;"	f	struct:Point
+Point	src/common.h	/^struct Point {$/;"	s
+PointLocation	src/common.h	/^enum PointLocation {$/;"	g
+S	scripts/gen-cp.py	/^S = []$/;"	v
+UH	scripts/gen-cp.py	/^UH = [S[0], S[1]]$/;"	v
+bench	meson.build	/^subdir('bench')$/;"	S
+benchmark_dep	bench/meson.build	/^benchmark_dep = dependency('benchmark')$/;"	V
+benchmarks	build/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	o	object:introspection.information
+benchmarks	clean/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	o	object:introspection.information
+bm_deps	bench/meson.build	/^bm_deps = [benchmark_dep, thread_dep]$/;"	V
+bm_exe	bench/meson.build	/^bm_exe = executable($/;"	V
+bm_srcs	bench/meson.build	/^bm_srcs = files('bm-main.cpp')$/;"	V
+build	build/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	s	object:directories
+build	clean/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	s	object:directories
+buildFromVertices	src/common.cpp	/^void ConvexPolygon::buildFromVertices(const vector<Point>& vertices) {$/;"	f	class:ConvexPolygon	typeref:typename:void
+build_files_updated	build/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	b
+build_files_updated	clean/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	b
+buildoptions	build/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	o	object:introspection.information
+buildoptions	clean/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	o	object:introspection.information
+buildsystem_files	build/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	o	object:introspection.information
+buildsystem_files	clean/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	o	object:introspection.information
+compareByX	src/common.cpp	/^bool compareByX(const Point& a, const Point& b) {$/;"	f	typeref:typename:bool
+compilers	build/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	o	object:introspection.information
+compilers	clean/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	o	object:introspection.information
+cross	src/common.cpp	/^double cross(const Point& a, const Point& b) {$/;"	f	typeref:typename:double
+csearch	meson.build	/^prj_exe = executable($/;"	B
+csearch	meson.build	/^project($/;"	P
+dependencies	build/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	o	object:introspection.information
+dependencies	clean/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	o	object:introspection.information
+directories	build/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	o
+directories	clean/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	o
+error	build/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	b
+error	clean/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	b
+error_list	build/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	a
+error_list	clean/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	a
+file	build/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	s	object:introspection.information.benchmarks
+file	build/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	s	object:introspection.information.buildoptions
+file	build/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	s	object:introspection.information.buildsystem_files
+file	build/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	s	object:introspection.information.compilers
+file	build/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	s	object:introspection.information.dependencies
+file	build/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	s	object:introspection.information.install_plan
+file	build/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	s	object:introspection.information.installed
+file	build/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	s	object:introspection.information.machines
+file	build/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	s	object:introspection.information.projectinfo
+file	build/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	s	object:introspection.information.targets
+file	build/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	s	object:introspection.information.tests
+file	clean/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	s	object:introspection.information.benchmarks
+file	clean/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	s	object:introspection.information.buildoptions
+file	clean/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	s	object:introspection.information.buildsystem_files
+file	clean/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	s	object:introspection.information.compilers
+file	clean/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	s	object:introspection.information.dependencies
+file	clean/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	s	object:introspection.information.install_plan
+file	clean/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	s	object:introspection.information.installed
+file	clean/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	s	object:introspection.information.machines
+file	clean/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	s	object:introspection.information.projectinfo
+file	clean/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	s	object:introspection.information.targets
+file	clean/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	s	object:introspection.information.tests
+full	build/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	s	object:introspection.version
+full	build/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	s	object:meson_version
+full	clean/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	s	object:introspection.version
+full	clean/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	s	object:meson_version
+getLowerChain	src/common.h	/^    const vector<Point>& getLowerChain() const { return lowerChain; }$/;"	f	class:ConvexPolygon	typeref:typename:const vector<Point> &
+getUpperChain	src/common.h	/^    const vector<Point>& getUpperChain() const { return upperChain; }$/;"	f	class:ConvexPolygon	typeref:typename:const vector<Point> &
+gtest_dep	meson.build	/^gtest_dep = dependency('gtest')$/;"	V
+gtest_dep	test/meson.build	/^gtest_dep = dependency('gtest')$/;"	V
+i	scripts/gen-cp.py	/^i = 2$/;"	v
+info	build/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	s	object:directories
+info	clean/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	s	object:directories
+information	build/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	o	object:introspection
+information	clean/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	o	object:introspection
+install_plan	build/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	o	object:introspection.information
+install_plan	clean/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	o	object:introspection.information
+installed	build/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	o	object:introspection.information
+installed	clean/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	o	object:introspection.information
+introspection	build/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	o
+introspection	clean/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	o
+left_turn	scripts/gen-cp.py	/^def left_turn ( p1, p2, p3 ):$/;"	f
+leftmost	src/common.h	/^    Point leftmost, rightmost;$/;"	m	class:ConvexPolygon	typeref:typename:Point
+lowerChain	src/common.h	/^    vector<Point> lowerChain;$/;"	m	class:ConvexPolygon	typeref:typename:vector<Point>
+machines	build/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	o	object:introspection.information
+machines	clean/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	o	object:introspection.information
+main	build/meson-private/sanitycheckcpp.cc	/^class breakCCompiler;int main(void) { return 0; }$/;"	f	typeref:typename:int
+main	clean/meson-private/sanitycheckcpp.cc	/^class breakCCompiler;int main(void) { return 0; }$/;"	f	typeref:typename:int
+main	src/main.cpp	/^int main(int argc, char* argv[]) {$/;"	f	typeref:typename:int
+main_srcs	src/meson.build	/^main_srcs = files('common.cpp', 'io.cpp', 'main.cpp', 'search.cpp')$/;"	V
+major	build/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	n	object:introspection.version
+major	build/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	n	object:meson_version
+major	clean/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	n	object:introspection.version
+major	clean/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	n	object:meson_version
+meson_version	build/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	o
+meson_version	clean/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	o
+minor	build/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	n	object:introspection.version
+minor	build/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	n	object:meson_version
+minor	clean/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	n	object:introspection.version
+minor	clean/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	n	object:meson_version
+n	scripts/gen-cp.py	/^n = len(S)$/;"	v
+n	scripts/gen-rnd.py	/^n = random.randint(10,40)$/;"	v
+nl	scripts/gen-cp.py	/^nl = 2$/;"	v
+nu	scripts/gen-cp.py	/^nu = 2$/;"	v
+onSegment	src/common.cpp	/^bool onSegment(const Point& a, const Point& b, const Point& c) {$/;"	f	typeref:typename:bool
+operator -	src/common.h	/^    Point operator-(const Point& other) const {$/;"	f	struct:Point	typeref:typename:Point
+operator ==	src/common.h	/^    bool operator==(const Point& other) const {$/;"	f	struct:Point	typeref:typename:bool
+patch	build/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	n	object:introspection.version
+patch	build/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	n	object:meson_version
+patch	clean/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	n	object:introspection.version
+patch	clean/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	n	object:meson_version
+printPolygonChains	src/search.cpp	/^void printPolygonChains(const ConvexPolygon& polygon) {$/;"	f	typeref:typename:void
+printResults	src/io.cpp	/^void printResults(const vector<Point>& points, const vector<PointLocation>& results) {$/;"	f	typeref:typename:void
+prj_exe	meson.build	/^prj_exe = executable($/;"	V
+processQueries	src/search.cpp	/^vector<PointLocation> processQueries(const ConvexPolygon& polygon, const vector<Point>& queryPoi/;"	f	typeref:typename:vector<PointLocation>
+projectinfo	build/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	o	object:introspection.information
+projectinfo	clean/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	o	object:introspection.information
+queryPoint	src/common.cpp	/^PointLocation ConvexPolygon::queryPoint(const Point& q) const {$/;"	f	class:ConvexPolygon	typeref:typename:PointLocation
+readPoints	src/io.cpp	/^vector<Point> readPoints(const string& filename) {$/;"	f	typeref:typename:vector<Point>
+readPolygon	src/io.cpp	/^vector<Point> readPolygon(const string& filename) {$/;"	f	typeref:typename:vector<Point>
+right_turn	scripts/gen-cp.py	/^def right_turn ( p1, p2, p3 ):$/;"	f
+rightmost	src/common.h	/^    Point leftmost, rightmost;$/;"	m	class:ConvexPolygon	typeref:typename:Point
+run-all	bench/meson.build	/^bm_exe = executable($/;"	B
+run-all	test/meson.build	/^tst_exe = executable($/;"	B
+source	build/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	s	object:directories
+source	clean/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	s	object:directories
+src	meson.build	/^subdir('src')$/;"	S
+targets	build/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	o	object:introspection.information
+targets	clean/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	o	object:introspection.information
+test	meson.build	/^subdir('test')$/;"	S
+tests	build/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	o	object:introspection.information
+tests	clean/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	o	object:introspection.information
+thread_dep	bench/meson.build	/^thread_dep = dependency('threads')$/;"	V
+thread_dep	meson.build	/^thread_dep = dependency('threads')$/;"	V
+thread_dep	test/meson.build	/^thread_dep = dependency('threads')$/;"	V
+tst_deps	test/meson.build	/^tst_deps = [gtest_dep, thread_dep]$/;"	V
+tst_exe	test/meson.build	/^tst_exe = executable($/;"	V
+tst_srcs	test/meson.build	/^tst_srcs = files('tst-main.cpp')$/;"	V
+updated	build/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	b	object:introspection.information.benchmarks
+updated	build/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	b	object:introspection.information.buildoptions
+updated	build/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	b	object:introspection.information.buildsystem_files
+updated	build/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	b	object:introspection.information.compilers
+updated	build/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	b	object:introspection.information.dependencies
+updated	build/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	b	object:introspection.information.install_plan
+updated	build/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	b	object:introspection.information.installed
+updated	build/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	b	object:introspection.information.machines
+updated	build/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	b	object:introspection.information.projectinfo
+updated	build/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	b	object:introspection.information.targets
+updated	build/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	b	object:introspection.information.tests
+updated	clean/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	b	object:introspection.information.benchmarks
+updated	clean/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	b	object:introspection.information.buildoptions
+updated	clean/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	b	object:introspection.information.buildsystem_files
+updated	clean/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	b	object:introspection.information.compilers
+updated	clean/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	b	object:introspection.information.dependencies
+updated	clean/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	b	object:introspection.information.install_plan
+updated	clean/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	b	object:introspection.information.installed
+updated	clean/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	b	object:introspection.information.machines
+updated	clean/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	b	object:introspection.information.projectinfo
+updated	clean/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	b	object:introspection.information.targets
+updated	clean/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	b	object:introspection.information.tests
+upperChain	src/common.h	/^    vector<Point> upperChain;$/;"	m	class:ConvexPolygon	typeref:typename:vector<Point>
+version	build/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	o	object:introspection
+version	clean/meson-info/meson-info.json	/^{"meson_version": {"full": "1.8.4", "major": 1, "minor": 8, "patch": 4}, "directories": {"source/;"	o	object:introspection
+x	scripts/gen-cp.py	/^        x = random.random() * 9.9 - 5$/;"	v
+x	scripts/gen-rnd.py	/^    x = random.random() * 11.9 - 1$/;"	v
+x	src/common.h	/^    double x, y;$/;"	m	struct:Point	typeref:typename:double
+y	scripts/gen-cp.py	/^        y = random.random() * 9.9 - 5$/;"	v
+y	scripts/gen-rnd.py	/^    y = random.random() * 11.9 - 1$/;"	v
+y	src/common.h	/^    double x, y;$/;"	m	struct:Point	typeref:typename:double
