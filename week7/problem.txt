@@ -1,0 +1,26 @@
+Let S be a subdivision. Input S form a a file and store it in DCEL.
+Then answer some queries about faces, vertices and edges.
+
+Input :
+
+struct point {
+  Ident id,
+  float x,
+  float y
+}
+
+struct segment {
+  Ident id,
+  Ident start
+  Ident end
+}
+
+struct region {
+  Ident id
+  List<Ident> outer (anti-clock-wise)
+  List<Ident> inner (clock-wise)
+}
+
+class DCEL {
+
+}
