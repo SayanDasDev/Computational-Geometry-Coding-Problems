@@ -24,3 +24,8 @@ struct region {
 class DCEL {
 
 }
+
+
+Query: 
+Search a Face ID. Find the number of edges in that face.
+  Check for dangling edge/bridge (do it in O(n))
