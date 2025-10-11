@@ -1,2 +1,2 @@
 Triangulate using removal of ears.
-Input: Simple polygon as  a list of vertices in anti-clockwise order.
+Input: Simple polygon as a list of vertices in anti-clockwise order.

@@ -54,5 +54,8 @@
     "stdexcept": "cpp",
     "cstring": "cpp",
     "map": "cpp"
-  }
+  },
+  "cSpell.words": [
+    "segintersctions"
+  ]
 }

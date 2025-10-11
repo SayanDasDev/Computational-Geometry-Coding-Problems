@@ -11,21 +11,17 @@
 
 #define PROJECT_NAME "segintersctions"
 
-// Use a small epsilon for floating-point comparisons to handle precision issues.
 const double EPS = 1e-9;
 
-// ## 1. Core Data Structures
 
-// Represents a point in 2D space.
 struct Point {
     double x, y;
 
-    // Overload operators for comparison.
     bool operator<(const Point& other) const {
         if (std::abs(y - other.y) > EPS) {
-            return y > other.y; // Higher y-coordinate comes first
+            return y > other.y;
         }
-        return x < other.x - EPS; // Then smaller x-coordinate
+        return x < other.x - EPS;
     }
 
     bool operator==(const Point& other) const {
@@ -33,12 +29,10 @@ struct Point {
     }
 };
 
-// Represents a line segment with two endpoints and a unique ID.
 struct Segment {
     Point p1, p2;
     int id;
 
-    // Constructor ensures p1 is the upper endpoint.
     Segment(Point start, Point end, int seg_id) : id(seg_id) {
         if (start < end) {
             p1 = start;
@@ -51,10 +45,6 @@ struct Segment {
 };
 
 
-// ## 2. Custom Comparators
-
-// Functor for comparing points in the event queue.
-// Follows the same logic as Point::operator<
 struct PointCmp {
     bool operator()(const Point& a, const Point& b) const {
         if (std::abs(a.y - b.y) > EPS) {
@@ -67,15 +57,11 @@ struct PointCmp {
     }
 };
 
-// Functor for comparing segments in the status structure.
-// The order depends on the x-coordinate intersection with the sweep line.
 struct SegmentCmp {
-    // A static member to hold the current y-coordinate of the sweep line.
     static double sweep_line_y;
 
-    // Calculates the x-coordinate of a segment at the sweep line's y-level.
     double getXatY(const Segment* s) const {
-        if (std::abs(s->p1.y - s->p2.y) < EPS) { // Horizontal segment
+        if (std::abs(s->p1.y - s->p2.y) < EPS) {
             return s->p1.x;
         }
         return s->p1.x + (sweep_line_y - s->p1.y) * (s->p2.x - s->p1.x) / (s->p2.y - s->p1.y);
@@ -93,15 +79,12 @@ struct SegmentCmp {
     }
 };
 
-// Initialize the static member.
 double SegmentCmp::sweep_line_y = 0;
 
-// Define container types for clarity.
 using EventQueue = std::set<Point, PointCmp>;
 using Status = std::set<Segment*, SegmentCmp>;
 
 
-// ## 3. The Bentley-Ottmann Algorithm Class
 
 class BentleyOttmann {
 public:
@@ -141,7 +124,6 @@ private:
         
         for (Segment* s : status) {
             if (s->p2 == p) L.push_back(s);
-            // Check for collinearity AND if point is within the segment's bounding box
             else if (std::abs((p.y - s->p1.y) * (s->p2.x - s->p1.x) - (p.x - s->p1.x) * (s->p2.y - s->p1.y)) < EPS) {
                 if (p.x >= std::min(s->p1.x, s->p2.x) - EPS && p.x <= std::max(s->p1.x, s->p2.x) + EPS &&
                     p.y >= std::min(s->p1.y, s->p2.y) - EPS && p.y <= std::max(s->p1.y, s->p2.y) + EPS) {
@@ -166,12 +148,8 @@ private:
         for (Segment* s : C) status.insert(s);
         
         if (U.empty() && C.empty()) {
-            // This case handles when p is only a lower endpoint. The segments in L have been
-            // removed from the status. We now find the new neighbors that surround the
-            // position of the removed segments.
             Segment *sl = nullptr, *sr = nullptr;
 
-            // Find the first segment in the status that is to the right of p.
             auto it = status.begin();
             for (; it != status.end(); ++it) {
                 if (SegmentCmp().getXatY(*it) > p.x + EPS) {
@@ -180,7 +158,6 @@ private:
                 }
             }
 
-            // The segment to the left is the one just before sr.
             if (it != status.begin()) {
                 sl = *std::prev(it);
             }
@@ -228,39 +205,27 @@ private:
     }
 };
 
-// ## 4. Input Processing Function
 
-/**
- * @brief Reads line segments from a file.
- * @param filename The path to the input file.
- * @return A vector of Segment objects.
- *
- * The file should contain four space-separated numbers per line (x1 y1 x2 y2),
- * each representing a line segment.
- */
 std::vector<Segment> readSegmentsFromFile(const std::string& filename) {
     std::vector<Segment> segments;
     std::ifstream infile(filename);
 
     if (!infile.is_open()) {
         std::cerr << "Error: Could not open file '" << filename << "'" << std::endl;
-        return segments; // Return empty vector on error
+        return segments;
     }
 
     std::string line;
     int segment_id_counter = 1;
     double x1, y1, x2, y2;
 
-    // Read the file line by line
     while (std::getline(infile, line)) {
-        // Use a stringstream to parse the numbers from the line
         std::istringstream iss(line);
         if (iss >> x1 >> y1 >> x2 >> y2) {
             Point p1 = {x1, y1};
             Point p2 = {x2, y2};
             segments.emplace_back(p1, p2, segment_id_counter++);
         } else {
-            // Warn about lines that don't have four numbers
             if(!line.empty()) {
                 std::cerr << "Warning: Skipping malformed line: " << line << std::endl;
             }
@@ -272,19 +237,16 @@ std::vector<Segment> readSegmentsFromFile(const std::string& filename) {
 }
 
 
-// ## 5. Main Function - Entry Point
 
 int main(int argc, char* argv[]) {
-    // Check for the correct number of command-line arguments
     if (argc != 2) {
         std::cerr << "Usage: " << argv[0] << " <input_file.in>" << std::endl;
-        return 1; // Return an error code
+        return 1;
     }
 
     std::string filename = argv[1];
     std::vector<Segment> segments = readSegmentsFromFile(filename);
 
-    // Exit if file was not read or contained no valid segments
     if (segments.empty()) {
         std::cerr << "No valid segments were read from the file. Exiting." << std::endl;
         return 1;
@@ -299,7 +261,6 @@ int main(int argc, char* argv[]) {
     std::cout << std::fixed << std::setprecision(2);
     for (const auto& i : intersections) {
         std::cout << "  - Point (" << i.p.x << ", " << i.p.y << ") involves segments: ";
-        // Sort IDs for consistent output
         std::vector<int> sorted_ids = i.segment_ids;
         std::sort(sorted_ids.begin(), sorted_ids.end());
         for (int id : sorted_ids) {

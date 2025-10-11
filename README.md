@@ -173,3 +173,115 @@ Check for each query point q ∈ S, if it is inside, outside, or on hte boundary
 </details>
 
 ---
+
+## 📂 Week 6: Segment Intersections
+
+### 📜 Problem Statement
+> Given a number of line segments find its intersections.
+
+---
+
+### 📁 Folder
+[🔗 Go to Week 6 folder](./week6/)
+
+---
+
+### 📄 Demo Input
+<details>
+<summary>Click to view sample input</summary>
+
+```
+0 0 6 0
+2 -2 2 2
+4 -1 4 1
+1 1 5 1
+```
+
+</details>
+
+---
+
+## 📂 Week 7: DCEL
+
+### 📜 Problem Statement
+> Let S be a subdivision. Input S form a a file and store it in DCEL.
+Then answer some queries about faces, vertices and edges.
+
+Input :
+
+struct point {
+  Ident id,
+  float x,
+  float y
+}
+
+struct segment {
+  Ident id,
+  Ident start
+  Ident end
+}
+
+struct region {
+  Ident id
+  List<Ident> outer (anti-clock-wise)
+  List<Ident> inner (clock-wise)
+}
+
+class DCEL {
+
+}
+
+
+Query: 
+Search a Face ID. Find the number of edges in that face.
+  Check for dangling edge/bridge (do it in O(n))
+
+---
+
+### 📁 Folder
+[🔗 Go to Week 7 folder](./week7/)
+
+---
+
+### 📄 Demo Input
+<details>
+<summary>Click to view sample input</summary>
+
+```
+1 0.0 0.0
+2 1.0 0.0
+3 0.5 1.0
+```
+
+</details>
+
+---
+
+## 📂 Week 8: Triangulation by Ear Removal
+
+### 📜 Problem Statement
+> Triangulate using removal of ears.
+Input: Simple polygon as a list of vertices in anti-clockwise order.
+
+---
+
+### 📁 Folder
+[🔗 Go to Week 8 folder](./week8/)
+
+---
+
+### 📄 Demo Input
+<details>
+<summary>Click to view sample input</summary>
+
+```
+0 2
+2 0
+4 1
+3 3
+1 3
+```
+
+</details>
+
+---
