@@ -1,0 +1,1 @@
+main_srcs = files('io.cpp', 'point.cpp', 'y_monotone.cpp', 'main.cpp')

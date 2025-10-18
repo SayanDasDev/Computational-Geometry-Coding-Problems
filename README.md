@@ -5,6 +5,15 @@
 - [Week 3: Inside/Outside Polygon Check in Linear Time](#📂-week-3-inside/outside-polygon-check-in-linear-time)
 - [Week 4: Convex Hull](#📂-week-4-convex-hull)
 - [Week 5: Inside/Outside/On boundary Polygon Check in Logerithmic Time](#📂-week-5-inside/outside/on-boundary-polygon-check-in-logerithmic-time)
+- [Week 6: Segment Intersections](#📂-week-6-segment-intersections)
+- [Week 7: DCEL](#📂-week-7-dcel)
+- [Week 8: Triangulation by Ear Removal](#📂-week-8-triangulation-by-ear-removal)
+
+- [Week 1: Collinear/Coincident Check](#📂-week-1-collinear/coincident-check)
+- [Week 2: Simple/Convex Polygon Check](#📂-week-2-simple/convex-polygon-check)
+- [Week 3: Inside/Outside Polygon Check in Linear Time](#📂-week-3-inside/outside-polygon-check-in-linear-time)
+- [Week 4: Convex Hull](#📂-week-4-convex-hull)
+- [Week 5: Inside/Outside/On boundary Polygon Check in Logerithmic Time](#📂-week-5-inside/outside/on-boundary-polygon-check-in-logerithmic-time)
 
 # Weekly Coding Problems 📚
 
