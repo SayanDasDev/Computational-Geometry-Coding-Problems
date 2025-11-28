@@ -1,6 +1,7 @@
 #include "dcel_queries.h"
 #include <cmath>
 #include <algorithm>
+#include <functional>
 
 using namespace std;
 
@@ -192,4 +193,95 @@ bool DCELQueries::isConnected() const {
     }
     
     return visitedCount == vertices.size();
+}
+
+int DCELQueries::getNumberOfEdgesInFace(Ident faceId) const {
+    Face* f = dcel->getFace(faceId);
+    if (!f || !f->outerComponent) return 0;
+
+    int count = 0;
+    HalfEdge* start = f->outerComponent;
+    HalfEdge* e = start;
+
+    do {
+        count++;
+        e = e->next;
+    } while (e != start);
+
+    return count;
+}
+
+vector<pair<Ident, Ident>> DCELQueries::getDanglingEdges() const {
+    vector<pair<Ident, Ident>> result;
+
+    // Compute degree of each vertex
+    unordered_map<Ident, int> degree;
+    for (auto& [vid, v] : dcel->getVertices()) {
+        degree[vid] = 0;
+    }
+
+    // Each edge counted once
+    for (auto& [eid, he] : dcel->getHalfEdges()) {
+        if (eid % 2 == 1) continue; // only one direction
+        degree[he->origin->id]++;
+        degree[he->twin->origin->id]++;
+    }
+
+    // A dangling edge = one endpoint degree = 1
+    for (auto& [eid, he] : dcel->getHalfEdges()) {
+        if (eid % 2 == 1) continue;
+        Ident u = he->origin->id;
+        Ident v = he->twin->origin->id;
+
+        if (degree[u] == 1 || degree[v] == 1) {
+            result.push_back({u, v});
+        }
+    }
+
+    return result;
+}
+
+
+vector<pair<Ident, Ident>> DCELQueries::getBridges() const {
+    vector<pair<Ident, Ident>> bridges;
+
+    // Build adjacency list
+    unordered_map<Ident, vector<Ident>> adj;
+    for (auto& [eid, he] : dcel->getHalfEdges()) {
+        if (eid % 2 == 1) continue;
+        Ident u = he->origin->id;
+        Ident v = he->twin->origin->id;
+        adj[u].push_back(v);
+        adj[v].push_back(u);
+    }
+
+    unordered_map<Ident, int> disc, low;
+    unordered_map<Ident, bool> visited;
+    int timer = 0;
+
+    function<void(Ident, Ident)> dfs = [&](Ident u, Ident parent) {
+        visited[u] = true;
+        disc[u] = low[u] = ++timer;
+
+        for (Ident v: adj[u]) {
+            if (v == parent) continue;
+
+            if (!visited[v]) {
+                dfs(v, u);
+                low[u] = min(low[u], low[v]);
+
+                if (low[v] > disc[u]) {
+                    bridges.push_back({u, v});
+                }
+            } else {
+                low[u] = min(low[u], disc[v]);
+            }
+        }
+    };
+
+    for (auto& [vid, _] : dcel->getVertices()) {
+        if (!visited[vid]) dfs(vid, -1);
+    }
+
+    return bridges;
 }

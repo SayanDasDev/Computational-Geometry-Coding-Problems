@@ -8,6 +8,7 @@
 #include <fstream>
 #include <sstream>
 #include <string>
+#include <cstdio>
 
 #define PROJECT_NAME "segintersctions"
 
@@ -236,23 +237,89 @@ std::vector<Segment> readSegmentsFromFile(const std::string& filename) {
     return segments;
 }
 
+std::vector<Segment> readSegmentsFromStream(std::istream& input) {
+    std::vector<Segment> segments;
+    std::string line;
+    int segment_id_counter = 1;
+    double x1, y1, x2, y2;
+    while (std::getline(input, line)) {
+        std::istringstream iss(line);
+        if (iss >> x1 >> y1 >> x2 >> y2) {
+            Point p1 = {x1, y1};
+            Point p2 = {x2, y2};
+            segments.emplace_back(p1, p2, segment_id_counter++);
+        } else {
+            if (!line.empty()) {
+                std::cerr << "Warning: Skipping malformed line: " << line << std::endl;
+            }
+        }
+    }
+    return segments;
+}
+
+std::vector<Segment> generateRandomSegmentsViaPythonScript(const std::string& script_path) {
+    std::vector<Segment> segments;
+    std::stringstream ss;
+#ifdef _WIN32
+    std::string command = "python \"" + script_path + "\"";
+    FILE* pipe = _popen(command.c_str(), "r");
+    if (!pipe) {
+        command = "py -3 \"" + script_path + "\"";
+        pipe = _popen(command.c_str(), "r");
+    }
+#else
+    std::string command = "python3 \"" + script_path + "\"";
+    FILE* pipe = popen(command.c_str(), "r");
+#endif
+    if (!pipe) {
+        std::cerr << "Error: Could not execute Python script '" << script_path << "'" << std::endl;
+        return segments;
+    }
+    char buffer[256];
+    while (fgets(buffer, sizeof(buffer), pipe) != nullptr) {
+        ss << buffer;
+    }
+#ifdef _WIN32
+    _pclose(pipe);
+#else
+    pclose(pipe);
+#endif
+    segments = readSegmentsFromStream(ss);
+    return segments;
+}
+
 
 
 int main(int argc, char* argv[]) {
     if (argc != 2) {
-        std::cerr << "Usage: " << argv[0] << " <input_file.in>" << std::endl;
+        std::cerr << "Usage: " << argv[0] << " <input_file.in> or --rand" << std::endl;
         return 1;
     }
 
-    std::string filename = argv[1];
-    std::vector<Segment> segments = readSegmentsFromFile(filename);
+    std::string arg = argv[1];
+    std::vector<Segment> segments;
+    if (arg == std::string("--rand")) {
+        std::string script_path = "D:/CollegeWork/Sem III/SirishMj/Computational-Geometry-Coding-Problems/week6/test/gen-rand.py";
+        segments = generateRandomSegmentsViaPythonScript(script_path);
+    } else {
+        segments = readSegmentsFromFile(arg);
+    }
 
     if (segments.empty()) {
-        std::cerr << "No valid segments were read from the file. Exiting." << std::endl;
+        std::cerr << "No valid segments were read from the input. Exiting." << std::endl;
         return 1;
     }
     
-    std::cout << "Read " << segments.size() << " segments from file '" << filename << "'.\n";
+    if (arg == std::string("--rand")) {
+        std::cout << "Read " << segments.size() << " random segments.\n";
+    } else {
+        std::cout << "Read " << segments.size() << " segments from file '" << arg << "'.\n";
+    }
+    std::cout << "\nInput segments:\n";
+    std::cout << std::fixed << std::setprecision(2);
+    for (const auto& s : segments) {
+        std::cout << "  " << s.id << ": (" << s.p1.x << ", " << s.p1.y << ") -> (" << s.p2.x << ", " << s.p2.y << ")\n";
+    }
     
     BentleyOttmann solver;
     std::vector<BentleyOttmann::Intersection> intersections = solver.find(segments);

@@ -27,6 +27,10 @@ public:
     float getFaceArea(Ident faceId) const;
     bool isFaceBounded(Ident faceId) const;
     int getNumberOfHoles(Ident faceId) const;
+
+    vector<pair<Ident, Ident>> getDanglingEdges() const;
+    vector<pair<Ident, Ident>> getBridges() const;
+    int getNumberOfEdgesInFace(Ident faceId) const;
     
     // Edge queries
     pair<Ident, Ident> getEdgeEndpoints(Ident edgeId) const;
@@ -39,11 +43,6 @@ public:
     int getTotalFaces() const;
     bool isConnected() const;
     
-    // ADD YOUR NEW QUERY FUNCTIONS HERE
-    // Example:
-    // bool isVertexOnBoundary(Ident vertexId) const;
-    // vector<Ident> getShortestPath(Ident from, Ident to) const;
-    // double getAverageEdgeLength() const;
 };
 
 #endif

@@ -63,34 +63,51 @@ int main(int argc, char* argv[]) {
     cout << "Is connected: " << (queries.isConnected() ? "Yes" : "No") << "\n";
     
     // Query specific vertices if they exist
-    if (queries.getTotalVertices() > 0) {
-        Ident firstVertexId = dcel.getVertices().begin()->first;
-        cout << "Vertex " << firstVertexId << " degree: " << queries.getVertexDegree(firstVertexId) << "\n";
+    // if (queries.getTotalVertices() > 0) {
+    //     Ident firstVertexId = dcel.getVertices().begin()->first;
+    //     cout << "Vertex " << firstVertexId << " degree: " << queries.getVertexDegree(firstVertexId) << "\n";
         
-        auto adjacentVertices = queries.getAdjacentVertices(firstVertexId);
-        cout << "Vertex " << firstVertexId << " adjacent vertices: ";
-        for (Ident v : adjacentVertices) {
-            cout << v << " ";
-        }
-        cout << "\n";
-    }
+    //     auto adjacentVertices = queries.getAdjacentVertices(firstVertexId);
+    //     cout << "Vertex " << firstVertexId << " adjacent vertices: ";
+    //     for (Ident v : adjacentVertices) {
+    //         cout << v << " ";
+    //     }
+    //     cout << "\n";
+    // }
     
     // Query specific faces if they exist
-    if (queries.getTotalFaces() > 0) {
-        for (const auto& facePair : dcel.getFaces()) {
-            Ident faceId = facePair.first;
-            cout << "Face " << faceId << " is bounded: " << (queries.isFaceBounded(faceId) ? "Yes" : "No") << "\n";
-            if (queries.isFaceBounded(faceId)) {
-                cout << "Face " << faceId << " area: " << queries.getFaceArea(faceId) << "\n";
-                auto faceVertices = queries.getFaceVertices(faceId);
-                cout << "Face " << faceId << " vertices: ";
-                for (Ident v : faceVertices) {
-                    cout << v << " ";
-                }
-                cout << "\n";
-            }
-        }
+    // if (queries.getTotalFaces() > 0) {
+    //     for (const auto& facePair : dcel.getFaces()) {
+    //         Ident faceId = facePair.first;
+    //         cout << "Face " << faceId << " is bounded: " << (queries.isFaceBounded(faceId) ? "Yes" : "No") << "\n";
+    //         if (queries.isFaceBounded(faceId)) {
+    //             cout << "Face " << faceId << " area: " << queries.getFaceArea(faceId) << "\n";
+    //             auto faceVertices = queries.getFaceVertices(faceId);
+    //             cout << "Face " << faceId << " vertices: ";
+    //             for (Ident v : faceVertices) {
+    //                 cout << v << " ";
+    //             }
+    //             cout << "\n";
+    //         }
+    //     }
+    // }
+
+    cout << "\nNumber of edges in each face:\n";
+
+    const auto& faces = dcel.getFaces();
+    for (auto it = faces.begin(); it != faces.end(); ++it) {
+        Ident faceId = it->first;
+        int edgeCount = queries.getNumberOfEdgesInFace(faceId);
+        cout << "Face " << faceId << " has " << edgeCount << " edges\n";
     }
+
+    auto dangling = queries.getDanglingEdges();
+    cout << "Dangling edges:\n";
+    for (auto [u,v] : dangling) cout << u << " - " << v << "\n";
+
+    auto bridges = queries.getBridges();
+    cout << "Bridges:\n";
+    for (auto [u,v] : bridges) cout << u << " - " << v << "\n";
     
     return 0;
 }

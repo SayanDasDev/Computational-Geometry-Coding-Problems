@@ -1,0 +1,7 @@
+Compute common intersection of n half planes in O(n logn)  time using books algorithm.
+we need to output all fine cases
+1. Infeasible
+2. Unbounded
+3. Unbounded strip
+4. Point, ray, line segment
+5. Bounded and general convex polygon
