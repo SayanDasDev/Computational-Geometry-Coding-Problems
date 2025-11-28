@@ -15,4 +15,8 @@ def generate_random_polygon():
     for x, y in points:
         print(x, y)
 
+    with open("input.in", "w") as f:
+        for x, y in points:
+            f.write(f"{round(x,3)} {round(y,3)}\n")
+
 generate_random_polygon()
