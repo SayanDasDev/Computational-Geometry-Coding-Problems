@@ -1,6 +1,6 @@
 import random
 
-def generate_y_monotone_polygon(n=8, spread=10, filename="input.in"):
+def generate_y_monotone_polygon(n=7, spread=10, filename="input.in"):
     """
     Generates n points forming a y-monotone polygon
     and writes them to input.txt, one 'x y' per line.
